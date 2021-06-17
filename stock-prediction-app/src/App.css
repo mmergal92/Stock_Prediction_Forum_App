@@ -75,6 +75,10 @@ li{
   background-color: #282c34;
  
 }
+.Chart{
+  width: 500px;
+  height: 600px;
+}
 
 .socialmediaicons{
   display: inline-block;
