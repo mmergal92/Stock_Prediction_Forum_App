@@ -18,7 +18,9 @@ import StockList from './pages/StockList';
 // Components Import
 
 // Dashboard
-// import Chart from './components/Dashboard/Chart';
+// import Chart1 from './components/Dashboard/Chart';
+import Dashboard from './components/Dashboard/Dashboard';
+
 // import CommentBox from './components/Dashboard/CommentBox';
 // import LikeDislike from './components/Dashboard/LikeDislike';
 // import StockTweets from './components/Dashboard/StockTweets';
@@ -50,6 +52,7 @@ function App() {
       <Route exact path="/"> 
         
         <Home/>
+        <Dashboard />
 
       </Route>
 
