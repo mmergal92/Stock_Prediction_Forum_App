@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 
 
 const StockList = (props) => {
+    console.log(props.url)
 
     const stockCos = [
         { name: "Apple", symbol: "AAPL"},
@@ -24,7 +25,7 @@ return (
             {stockCos.map((symbolLetters) => {
             const {name, symbol} = symbolLetters;
             return (
-                <Link to={`/stocks/${symbol}`}>
+                <Link to={`/stocks/${symbol}`} url = {props.url}>
                     <h2>{name}</h2>
                 </Link>
             );
