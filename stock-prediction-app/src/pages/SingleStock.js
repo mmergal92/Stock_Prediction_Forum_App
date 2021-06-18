@@ -1,17 +1,9 @@
-import React from 'react'
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
+import React, {useState} from 'react'
+// import Header from '../components/Header/Header'
+// import Footer from '../components/Footer/Footer'
 
 
-
-function SingleStock() {
-    return (
-        <div>
-            <Header/>
-            Single Stock Page
-            <Footer/>
-        </div>
-    )
+const SingleStock = (props) =>{
+    return(<h1>Hello</h1>)
 }
-
 export default SingleStock

@@ -40,7 +40,7 @@ import StockList from './pages/StockList';
 
 
 function App() {
-  const URL = ""
+  // const URL = "https://stock-prediction-forum-backend.herokuapp.com/"
 
   return (
 
@@ -59,12 +59,25 @@ function App() {
 
       </Route>
 
+      <Route 
+      path="/stocks/:symbol"
+      render={(routerProps)=><SingleStock{...routerProps}/>}>
+
+      </Route>
+
+      <Route path="/stocks/:symbol"
+        render={
+        (routerProps) => 
+        <Stock data={Data} {...routerProps}/>
+      }
+        />
+
       <Route path="/SignUp"> 
         
         <SignUp/>
 
       </Route>
-
+      
       <Route path="/SignIn"> 
         
         <SignIn/>
