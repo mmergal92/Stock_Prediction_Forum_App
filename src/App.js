@@ -40,22 +40,22 @@ import StockList from './pages/StockList';
 
 
 function App() {
-  const URL = "http://localhost:3001/"
+  const URL = "https://stock-prediction-forum-backend.herokuapp.com/"
 
   return (
 
    <div className="App">
      <Switch>
       
-      <Route exact path="/"> 
+      <Route exact path="/stocks" > 
         
-        <Home URL={URL}/>
+        <StockList url={URL}/>
 
       </Route>
 
-      <Route path="/stocks"> 
-        
-        <StockList/>
+      <Route 
+      path="/stocks/:symbol"
+      render={(routerProps)=><SingleStock{...routerProps}/>}>
 
       </Route>
 
@@ -64,7 +64,7 @@ function App() {
         <SignUp/>
 
       </Route>
-
+      
       <Route path="/SignIn"> 
         
         <SignIn URL={URL}/>
@@ -84,7 +84,11 @@ function App() {
       </Route>
 
       
+      <Route exact path="/"> 
+        
+        <Home/>
 
+      </Route>
 
 
       <Route path="*"> 
