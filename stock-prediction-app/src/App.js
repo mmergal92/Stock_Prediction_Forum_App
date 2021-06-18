@@ -40,7 +40,7 @@ import StockList from './pages/StockList';
 
 
 function App() {
-  const URL = ""
+  const URL = "http://localhost:3001/"
 
   return (
 
@@ -49,7 +49,7 @@ function App() {
       
       <Route exact path="/"> 
         
-        <Home/>
+        <Home URL={URL}/>
 
       </Route>
 
@@ -67,7 +67,7 @@ function App() {
 
       <Route path="/SignIn"> 
         
-        <SignIn/>
+        <SignIn URL={URL}/>
 
       </Route>
 

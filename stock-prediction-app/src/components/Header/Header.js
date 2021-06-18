@@ -5,6 +5,7 @@ import SignUpComponent from "./SignUpComponent";
 import SignInComponent from "./SignInComponent";
 import StocksComponent from "./StocksComponent";
 import HomeComponent from "./HomeComponent";
+import LogOut from "./LogOut";
 
 function Header() {
   return (
@@ -12,8 +13,9 @@ function Header() {
       <ul>
       <li id="HomeIcon"><HomeComponent/></li>
       <li><StocksComponent/></li>
-      <li><SignInComponent/></li>
-      <li><SignUpComponent/></li>
+      {localStorage.getItem('sessionEmail') === null ? <li><SignInComponent/></li> : ''}
+      {localStorage.getItem('sessionEmail') !== null ? <li><LogOut/></li> : ''}
+      {/* <li><SignUpComponent/></li> */}
       </ul>
     </div>
   );
