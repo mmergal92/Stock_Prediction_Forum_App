@@ -4,7 +4,7 @@ import React from 'react'
 function SignInComponent() {
     return (
         <div>
-            <a href="/SignIn">Sign In</a>
+            <a href="/SignIn">Login</a>
         </div>
     )
 }
