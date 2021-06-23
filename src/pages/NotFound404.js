@@ -5,7 +5,7 @@ function NotFound404() {
         <div>
             404 Not Found
             <br />
-            <a href="/home">Go Back</a>
+            <a href="/">Go Back</a>
         </div>
     )
 }

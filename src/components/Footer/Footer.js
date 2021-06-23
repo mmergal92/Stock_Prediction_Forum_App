@@ -2,6 +2,7 @@ import React from 'react'
 import AboutComponent from './AboutComponent'
 import SocialMedia from './SocialMedia'
 import SupportComponent from './SupportComponent'
+import Privacy from './Privacy'
 
 
 function Footer() {
@@ -11,6 +12,7 @@ function Footer() {
 
             <li><SupportComponent/></li>
             <li><AboutComponent/></li>
+            <li><Privacy/></li>
             </ul>
            
             

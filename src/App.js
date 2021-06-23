@@ -14,6 +14,7 @@ import SingleStock from './pages/SingleStock';
 import Support from './pages/Support';
 import UserProfile from './pages/UserProfile';
 import StockList from './pages/StockList';
+import Privacy from './pages/Privacy';
 
 // Components Import
 
@@ -81,6 +82,12 @@ function App() {
       <Route path="/Support"> 
         
         <Support/>
+
+      </Route>
+
+      <Route path="/privacy"> 
+        
+        <Privacy/>
 
       </Route>
 
