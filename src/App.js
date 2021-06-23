@@ -55,7 +55,8 @@ function App() {
 
       <Route 
       path="/stocks/:symbol"
-      render={(routerProps)=><SingleStock{...routerProps}/>}>
+      render={(routerProps)=><SingleStock{...routerProps}/>}
+      url={URL}>
 
       </Route>
 
