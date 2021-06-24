@@ -2,16 +2,18 @@ import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 // import Form from "@rjsf/core"
 // import UserComments from '../models/comments';
-
 function CommentBox() {
-    // console.log(props.match.url)
+//    console.log(window.location.href)
+var posSym  = (window.location.href).split("/stocks/").pop().replace('?', '');
+// console.log(posSym)
+let sym = posSym
+console.log(sym)
     const userCommentlist = [{
         symbol: "AAPL",
         date: "June 12, 2021",
         comment: "It will go up",
         username: "testuser"
     }]
-
     //STATES
     const [newList, setNewList] = useState(userCommentlist)
     const [date, setDate] = useState('');
@@ -20,16 +22,15 @@ function CommentBox() {
     const [username, setUsername] = useState('');
     const [change, setChange] = useState(true)
     const tempArray = newList;
-
     //HANDLES
     const commentChange = (event) =>{
         console.log("Adding text of comment")
         setComment(event.target.value)
     };
-    const dateChange = (event) =>{
-        console.log("Adding text of date")
-        setDate(event.target.value)
-    };
+    // const dateChange = (event) =>{
+    //     console.log("Adding text of date")
+    //     setDate(event.target.value)
+    // };
     // const symbolChange = (event) =>{
     //     console.log("Adding text of symbol")
     //     setSymbol(event.target.value)
@@ -38,41 +39,28 @@ function CommentBox() {
         console.log("Adding text of username")
         setUsername(event.target.value)
     };
-    const handleDelete= async(id)=>{
-        const URL = "http://localhost:8080/user/BA/"
-        console.log(tempArray)
-        const remove = await fetch (URL + id, {
+    const handleDelete= async(value)=>{
+        const URL = "http://localhost:8080/user/" + sym
+        console.log(URL)
+        // console.log(tempArray[0].comment)
+        const remove = await fetch (URL + "/" + value._id, {
             method: 'DELETE',
         })
-        console.log(remove)
-        tempArray.pop(remove);
-        setNewList(tempArray);
-        setChange(!change);
-        console.log("Did this work?")
-        
-        // console.log(tempArray.[0]._id)
-        // console.log(tempArray.[index].id)
-
-        // console.log(id)
+        console.log(value._id)
     }
-    const handleUpdate=(index)=>{
-        tempArray.pop(index);
-        setNewList(tempArray);
-        setChange(!change);
-    }
-
     const getNewList = async() => {
-        const postURL = "http://localhost:8080/user/BA"
+        const postURL = "http://localhost:8080/user/" + sym  
         const response = await fetch (postURL)
         const data = await response.json()
         // console.log(data)
         setNewList(data);
+        // console.log(data.id)
     }
     const handleSubmit = (response) =>{
         console.log(response)
         console.log(date)
         const postURL = "http://localhost:8080/user/"
- 
+        console.log(postURL)
         fetch (postURL, {
             method: 'POST',
             headers: {
@@ -80,7 +68,7 @@ function CommentBox() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify ({
-                symbol: "BA",
+                symbol: sym,
                 date: date,
                 comment: comment,
                 username: username
@@ -92,19 +80,9 @@ function CommentBox() {
         setNewList(tempArray)
         setChange(!change);
     }
-
-    // const newListChange = (response) =>{
-    //     console.log(response)
-    //     console.log(date)
-    //     const postURL = "http://localhost:8080/user/"
- 
-    //     fetch (postURL,
-    // }
-
     React.useEffect(()=>{
         getNewList();
     })
-
     const loaded = () =>{
         return (
             <div>
@@ -114,8 +92,8 @@ function CommentBox() {
                         return(
                             <>
                             <li key={index}> Symbol: {value.symbol}, Date:{value.date}, Comment: {value.comment}, Username: {value.username}
-                            <button onClick={() => handleUpdate(index)}>UPDATE</button>
-                            <button onClick={() => handleDelete(index)}>DELETE</button>
+                            {/* <button onClick={() => handleUpdate(index)}>UPDATE</button> */}
+                            <button onClick={() => handleDelete(value)}>DELETE</button>
                             </li>
                             </>
                         )
@@ -135,38 +113,6 @@ function CommentBox() {
             </div>
         )
     }
-    //     setNewList(response)
-
-    //     console.log("Did this work?")
-    // }
-    // const handleSubmit = (event) =>{
-    //     event.preventDefault();
-    //     const tempComment = {
-    //         symbol: symbol,
-    //         date: date,
-    //         comment: comment,
-    //         username: username
-    //     }
-    //     tempArray.push(tempComment);
-    //     setNewList(tempArray)
-    //     setChange(!change);
-    //     console.log(event.value)
-    //     console.log("Did this work?")
-    // }
-
-    // {
-    //     method: 'GET',
-    //     headers: {
-    //         Accept: 'application/json',
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify ({
-    //         symbol: "BA",
-    //         date: date,
-    //         comment: comment,
-    //         username: username
-    //     })
-    // })
     // const schema = {
     //     title: "Comments",
     //     type: "object",
@@ -179,21 +125,16 @@ function CommentBox() {
     //     }
     //   };
     //   const log = (type) => console.log.bind(console, type);
-    
     //   const onSubmitTest = async({formData}) => {
     //       console.log(formData)
     //       await UserComments.create(formData)
     //       window.location.reload()
     //   }
-
     // let x;
     // console.log(x)
     const loading =()=>{
         return <h1>Loading ...</h1>
     }
     return newList ? loaded(): loading();
-
-
 }
-
 export default CommentBox

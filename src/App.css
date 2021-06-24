@@ -1,6 +1,9 @@
 .App {
   text-align: center;
   color: navy;
+  min-height: 400px;
+   margin-bottom: 100px;
+   clear: both;
 }
 
 .App-logo {
@@ -75,9 +78,10 @@ li{
   background-color: #282c34;
  
 }
-.Chart{
-  width: 500px;
-  height: 600px;
+.chartdiv{
+  margin: auto;
+  width: 50%;
+  height: 25%;
 }
 
 .socialmediaicons{
