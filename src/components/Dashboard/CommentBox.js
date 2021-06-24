@@ -56,6 +56,7 @@ console.log(sym)
         setNewList(data);
         // console.log(data.id)
     }
+        //This function grabs the form values
     const handleSubmit = (response) =>{
         console.log(response)
         console.log(date)
@@ -101,6 +102,7 @@ console.log(sym)
                 </ul>
                 <br/>
                 <h3>Add a new Comment:</h3>
+                {/* Form should prevent default function on submit. */}
                 <form>
                 <label>
                 Username: <input type= "text" className = "username_input" value = {username} onChange = {usernameChange} placeholder = "username"/>
@@ -108,6 +110,7 @@ console.log(sym)
                 <label>
                 Comment: <textarea className = "comment_input" value = {comment} onChange = {commentChange} placeholder = "New Comment"/>
                 </label><br/>
+                {/* The onClick is the click handeler that calls function handlesubmit */}
                 <button onClick= {handleSubmit}>Submit</button>
                 </form>
             </div>

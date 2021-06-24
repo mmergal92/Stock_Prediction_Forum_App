@@ -43,6 +43,12 @@ import Privacy from './pages/Privacy';
 function App() {
   const URL = "https://stock-prediction-forum-backend.herokuapp.com/"
 
+  //Switch renders the first route that matches.
+  //Router is what makes the URL paramter pass as props to the single stock
+  //In the route for singlestock page
+    //we define "symbol" and this uses that URL segment as props...
+    //we render the single stock component for all urls in that directoy path
+
   return (
 
    <div className="App">
