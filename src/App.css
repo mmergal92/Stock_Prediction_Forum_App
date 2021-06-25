@@ -1,15 +1,17 @@
 .App {
   text-align: center;
-  color: navy;
+  background-color: #10101C;
+  color: white;
   min-height: 400px;
-   margin-bottom: 100px;
-   clear: both;
+  padding-bottom: 100px;
+  /* border: purple 2px solid */
+  /* clear: both; */
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -21,7 +23,6 @@ a{
   text-decoration: none;
   
 }
-
 
 a:link {
   color: grey;
@@ -57,13 +58,45 @@ ul{
 }
 
 .navbar{
-background-color: #282c34;
+background-color: #161624;
 text-align: right;
 
 }
 
+.wholeStockPage{
+  /* border: solid 1px yellow; */
+  color: #D6D7E3;
+}
+.stockInfo{
+  /* border: solid 1px green */
+}
+.comments {
+  /* border: solid 1px red */
+}
+.existing-comments {
+  /* border: solid 1px purple; */
+  /* width: 70%;
+  height: 25%; */
+}
+.new-comments {
+  /* border: solid 1px black; */
+  /* width: 70%;
+  height: 25%; */
+}
+.chartdiv{
+  margin: auto;
+  width: 50%;
+  height: 25%;
+}
+.stocktweets{
+  /* border: solid 1px yellowgreen; */
+}
+.stockFlexComponents{
+  display: inline-flex;
+  align-items: center;
 
 
+}
 li{
   display: inline-block;
   margin: 1%;
@@ -75,14 +108,9 @@ li{
   text-align: right;
   position: fixed;
   bottom: 0;
-  background-color: #282c34;
- 
+  background-color: #161624;
 }
-.chartdiv{
-  margin: auto;
-  width: 50%;
-  height: 25%;
-}
+
 
 .socialmediaicons{
   display: inline-block;

@@ -13,7 +13,7 @@ function Home() {
     console.log(localStorage.getItem('symbol'));
     console.log(x)
     return (
-        <div>
+        <div className = "home">
             <Header/>
             {/* <Dashboard/> */}
 

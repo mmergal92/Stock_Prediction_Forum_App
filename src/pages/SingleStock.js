@@ -3,7 +3,7 @@ import CommentBox from '../components/Dashboard/CommentBox'
 import Chart from '../components/Dashboard/Chart'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
-
+import StockTweets from '../components/Dashboard/StockTweets'
 
 const SingleStock = (props) =>{
         //Currency symbol from URL param
@@ -28,13 +28,19 @@ const SingleStock = (props) =>{
         const loaded = () =>{
             for (let i=0; i<stock.length; i++){
                 return(
-                    <div>
+                    <div className = "wholeStockPage">
                     <Header />
+                    <div className = "stockInfo">
                     <h1>Symbol: {stock[i].symbol}</h1>
-                    <h2>Date: {stock[i].date}</h2>
-                    <h3>Percent change: {stock[i].changePercent}</h3>
+                    <h2>Date: {stock[i].label}</h2>
+                    <h3>Percent change: {stock[i].changePercent}%</h3>
+                    <h3>Current Price: ${stock[i].open}</h3>
+                    </div>
                     <Chart />
+                    <div className = "stockFlexComponents">
                     <CommentBox />
+                    <StockTweets />
+                    </div>
                     <Footer />
                     </div>
                 )

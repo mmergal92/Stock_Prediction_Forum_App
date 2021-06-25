@@ -85,7 +85,8 @@ console.log(sym)
     })
     const loaded = () =>{
         return (
-            <div>
+            <div className = "comments">
+                <div className = "existing-comments">
                 <h3>Existing Comments:</h3>
                 <ul>
                     {newList.map((value, index) => {
@@ -99,7 +100,9 @@ console.log(sym)
                         )
                     })}
                 </ul>
+                </div>
                 <br/>
+                <div className = "new-comments">
                 <h3>Add a new Comment:</h3>
                 <form>
                 <label>
@@ -110,6 +113,7 @@ console.log(sym)
                 </label><br/>
                 <button onClick= {handleSubmit}>Submit</button>
                 </form>
+                </div>
             </div>
         )
     }
