@@ -67,30 +67,30 @@ text-align: right;
   /* border: solid 1px yellow; */
   color: #D6D7E3;
 }
-.stockInfo{
-  /* border: solid 1px green */
-}
-.comments {
-  /* border: solid 1px red */
-}
-.existing-comments {
-  /* border: solid 1px purple; */
-  /* width: 70%;
-  height: 25%; */
-}
-.new-comments {
-  /* border: solid 1px black; */
-  /* width: 70%;
-  height: 25%; */
-}
+/* .stockInfo{
+  border: solid 1px green
+} */
+/* .comments {
+  border: solid 1px red
+} */
+/* .existing-comments {
+  border: solid 1px purple;
+  width: 70%;
+  height: 25%;
+} */
+/* .new-comments {
+  border: solid 1px black;
+  width: 70%;
+  height: 25%;
+} */
 .chartdiv{
   margin: auto;
   width: 50%;
   height: 25%;
 }
-.stocktweets{
-  /* border: solid 1px yellowgreen; */
-}
+/* .stocktweets{
+  border: solid 1px yellowgreen;
+} */
 .stockFlexComponents{
   display: inline-flex;
   align-items: center;
