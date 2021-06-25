@@ -3,6 +3,8 @@ import CommentBox from '../components/Dashboard/CommentBox'
 import Chart from '../components/Dashboard/Chart'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
+import StockTweets from '../components/Dashboard/StockTweets'
+import calculate from '../utilities/calculate'
 
 //In singleStock component we receive props.. 
 const SingleStock = (props) =>{
@@ -41,8 +43,10 @@ const SingleStock = (props) =>{
                     <h1>Symbol: {stock[i].symbol}</h1>
                     <h2>Date: {stock[i].date}</h2>
                     <h3>Percent change: {stock[i].changePercent}</h3>
+                    <div>Stock Prediction: {calculate(stock)}</div>
                     <Chart />
                     <CommentBox />
+                    <StockTweets />
                     <Footer />
                     </div>
                 )
