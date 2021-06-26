@@ -91,7 +91,7 @@ function LikenDislike () {
         let getlikeinfo = async () => {
             console.log(numberofUsers)
 
-            let response = await fetch('http://localhost:3001/like/everything');
+            let response = await fetch('https://stock-prediction-forum-backend.herokuapp.com/like/everything');
 
             let likeinfo = await response.json();
             console.log(likeinfo)
@@ -116,7 +116,7 @@ function LikenDislike () {
         console.log(vote)
         if(vote === false){
             localStorage.setItem(`uservote${sym}`, sym+'like')
-            fetch('http://localhost:3001/like/add', {
+            fetch('https://stock-prediction-forum-backend.herokuapp.com/like/add', {
                 method: "post",
                 headers: {
                   Accept: "application/json",
@@ -167,7 +167,7 @@ function LikenDislike () {
         console.log(vote)
         if(vote === false){
             localStorage.setItem(`uservote${sym}`, sym+'dislike')
-            fetch('http://localhost:3001/dislike/add', {
+            fetch('https://stock-prediction-forum-backend.herokuapp.com/dislike/add', {
                 method: "post",
                 headers: {
                   Accept: "application/json",

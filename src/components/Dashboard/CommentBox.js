@@ -40,7 +40,7 @@ let sym = posSym
         setUsername(event.target.value)
     };
     const handleDelete= async(value)=>{
-        const URL = "http://localhost:3001/user/" + sym
+        const URL = "https://stock-prediction-forum-backend.herokuapp.com/" + "user/" + sym
         console.log(URL)
         // console.log(tempArray[0].comment)
         const remove = await fetch (URL + "/" + value._id, {
@@ -49,7 +49,7 @@ let sym = posSym
         console.log(value._id)
     }
     const getNewList = async() => {
-        const postURL = "http://localhost:3001/user/" + sym  
+        const postURL = "https://stock-prediction-forum-backend.herokuapp.com/" + "user/" + sym  
         const response = await fetch (postURL)
         const data = await response.json()
         // console.log(data)
@@ -59,7 +59,7 @@ let sym = posSym
     const handleSubmit = (response) =>{
         console.log(response)
         console.log(new Date(Date.now()).toLocaleString())
-        const postURL = "http://localhost:3001/user/"
+        const postURL = "https://stock-prediction-forum-backend.herokuapp.com/" + "user/" 
         console.log(postURL)
         fetch (postURL, {
             method: 'POST',

@@ -49,4 +49,4 @@ let sym = posSym
     return tname ? loaded(): loading();
 }
 
-export default StockTweets
+export default StockTweets;
