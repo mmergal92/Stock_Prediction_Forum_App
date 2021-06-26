@@ -20,7 +20,23 @@
 }
 a{
   text-decoration: none;
+  
 }
+.questionmark{
+  width: 36px;
+  height: 36px;
+}
+ 
+/* .likedislikebtn{
+
+} 
+
+.gored{
+  
+    color: red;
+     
+} */
+
 a:link {
   color: grey;
 }

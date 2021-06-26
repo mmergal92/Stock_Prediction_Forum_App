@@ -2,8 +2,6 @@ import React from 'react'
 
 
 // Components
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
 import Dashboard from '../components/Dashboard/Dashboard'
 // import StockImage from '../StockImage.jpg'
 
@@ -16,8 +14,6 @@ function Home() {
     console.log(x)
     return (
         <div className = "home">
-            
-            {/* <Header/> */}
             <div className = "home-heading">
             <h1>Your Investing Community</h1>
             </div>
@@ -28,8 +24,6 @@ function Home() {
             <p>Please <strong>Login</strong> to access all the features of this site.</p>
             </div>
             {/* <Dashboard/> */}
-
-            {/* <Footer/> */}
         </div>
     )
 }

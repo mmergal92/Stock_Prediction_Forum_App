@@ -7,7 +7,7 @@ function CommentBox() {
 var posSym  = (window.location.href).split("/stocks/").pop().replace('?', '');
 // console.log(posSym)
 let sym = posSym
-console.log(sym)
+// console.log(sym)
     const userCommentlist = [{
         symbol: "AAPL",
         date: "June 12, 2021",
@@ -40,7 +40,7 @@ console.log(sym)
         setUsername(event.target.value)
     };
     const handleDelete= async(value)=>{
-        const URL = "http://localhost:8080/user/" + sym
+        const URL = "http://localhost:3001/user/" + sym
         console.log(URL)
         // console.log(tempArray[0].comment)
         const remove = await fetch (URL + "/" + value._id, {
@@ -49,7 +49,7 @@ console.log(sym)
         console.log(value._id)
     }
     const getNewList = async() => {
-        const postURL = "http://localhost:8080/user/" + sym  
+        const postURL = "http://localhost:3001/user/" + sym  
         const response = await fetch (postURL)
         const data = await response.json()
         // console.log(data)
@@ -58,8 +58,8 @@ console.log(sym)
     }
     const handleSubmit = (response) =>{
         console.log(response)
-        console.log(date)
-        const postURL = "http://localhost:8080/user/"
+        console.log(new Date(Date.now()).toLocaleString())
+        const postURL = "http://localhost:3001/user/"
         console.log(postURL)
         fetch (postURL, {
             method: 'POST',
@@ -69,9 +69,9 @@ console.log(sym)
             },
             body: JSON.stringify ({
                 symbol: sym,
-                date: date,
+                date: new Date(Date.now()).toLocaleString(),
                 comment: comment,
-                username: username
+                username: localStorage.getItem('userfRealName')
             })
         })
         console.log("Did this work?")
@@ -103,7 +103,7 @@ console.log(sym)
                         return(
                                 <tr key={index}>
                                     <td>{value.symbol}</td>   
-                                    <td>{value.createAt}</td>  
+                                    <td>{value.date}</td>  
                                     <td>{value.comment}</td>  
                                     <td>{value.username}</td>
                                     <td><button onClick={() => handleDelete(value)}>DELETE</button></td>
@@ -112,6 +112,9 @@ console.log(sym)
                     </tbody>
                     </table>
                             {/* <li key={index}> Symbol: {value.symbol}, Date:{value.date}, Comment: {value.comment}, Username: {value.username}
+                            <>
+                            <li key={index}> Symbol: {value.symbol}, Date:{value.date}, Comment: {value.comment}, Author: {value.username}
+                            <br />
                             {/* <button onClick={() => handleUpdate(index)}>UPDATE</button> */}
                             {/* <button onClick={() => handleDelete(value)}>DELETE</button> */}
                             {/* </li> */} 
@@ -123,11 +126,14 @@ console.log(sym)
                 <div className = "new-comments">
                 <h3>Add a new Comment:</h3>
                 <form>
-                <label>
+                {/* <label>
                 Username: <input type= "text" className = "username_input" value = {username} onChange = {usernameChange} placeholder = "username"/>
-                </label><br/>
+                </label><br/> */}
                 <label>
-                Comment: <textarea className = "comment_input" value = {comment} onChange = {commentChange} placeholder = "New Comment"/>
+                
+                Commenting as <b>{localStorage.getItem('userfRealName')}</b>:
+                <br />
+                <textarea className = "comment_input" value = {comment} onChange = {commentChange} placeholder = "New Comment"/>
                 </label><br/>
                 <button onClick= {handleSubmit}>Submit</button>
                 </form>
