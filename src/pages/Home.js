@@ -5,7 +5,7 @@ import React from 'react'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import Dashboard from '../components/Dashboard/Dashboard'
-import StockImage from '../StockImage.jpg'
+// import StockImage from '../StockImage.jpg'
 
 function Home() {
 
@@ -22,7 +22,7 @@ function Home() {
             <h1>Your Investing Community</h1>
             </div>
             <div className = "home-content">
-            <img src = {StockImage} alt = "Image of Stock charts" />
+            {/* <img src = {StockImage} alt = "Image of Stock charts" /> */}
 
             <p>Welcome to the Stock Forum App where you can view stocks, see relevant information about the company, and leave comments to help other users with their investments.</p>
             <p>Please <strong>Login</strong> to access all the features of this site.</p>

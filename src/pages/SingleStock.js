@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import CommentBox from '../components/Dashboard/CommentBox'
-import Chart from '../components/Dashboard/Chart'
+import ChartGraph from '../components/Dashboard/Chart'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import StockTweets from '../components/Dashboard/StockTweets'
@@ -36,7 +36,7 @@ const SingleStock = (props) =>{
                     <h3>Percent change: {stock[i].changePercent}%</h3>
                     <h3>Current Price: ${stock[i].open}</h3>
                     </div>
-                    <Chart />
+                    <ChartGraph />
                     <div className = "stockFlexComponents">
                         <div className = "stockCommentComponent">
                     <CommentBox />

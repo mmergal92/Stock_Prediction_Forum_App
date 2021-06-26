@@ -75,7 +75,7 @@ console.log(sym)
             })
         })
         console.log("Did this work?")
-        const tempArray = newList;
+        // const tempArray = newList;
         tempArray.push(response)
         setNewList(tempArray)
         setChange(!change);
@@ -87,21 +87,39 @@ console.log(sym)
         return (
             <div className = "comments">
                 <div className = "existing-comments">
-                <h3>Existing Comments:</h3>
-                <ul>
-                    {newList.map((value, index) => {
+                <h3>Existing Comments:</h3> 
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Date</th>
+                        <th>Comment</th>
+                        <th>Username</th>
+                        <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {newList.map((value, index) => {
                         return(
-                            <>
-                            <li key={index}> Symbol: {value.symbol}, Date:{value.date}, Comment: {value.comment}, Username: {value.username}
+                                <tr key={index}>
+                                    <td>{value.symbol}</td>   
+                                    <td>{value.createAt}</td>  
+                                    <td>{value.comment}</td>  
+                                    <td>{value.username}</td>
+                                    <td><button onClick={() => handleDelete(value)}>DELETE</button></td>
+                                    </tr>
+                        )})}
+                    </tbody>
+                    </table>
+                            {/* <li key={index}> Symbol: {value.symbol}, Date:{value.date}, Comment: {value.comment}, Username: {value.username}
                             {/* <button onClick={() => handleUpdate(index)}>UPDATE</button> */}
-                            <button onClick={() => handleDelete(value)}>DELETE</button>
-                            </li>
-                            </>
-                        )
+                            {/* <button onClick={() => handleDelete(value)}>DELETE</button> */}
+                            {/* </li> */} 
+                        {/* )
                     })}
-                </ul>
-                </div>
+                </ul> */}
                 <br/>
+                </div>
                 <div className = "new-comments">
                 <h3>Add a new Comment:</h3>
                 <form>

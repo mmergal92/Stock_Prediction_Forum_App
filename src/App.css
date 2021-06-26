@@ -71,6 +71,7 @@ text-align: right;
   margin: auto;
   width: 50%;
   height: 25%;
+  padding: 10px;
 }
 /* .stocktweets{
   border: solid 1px yellowgreen;
@@ -88,6 +89,10 @@ text-align: right;
   align-items: center;
   text-align: center;
   /* border: solid 1px pink; */
+  padding: 10px;
+}
+.stockCommentComponent table{
+  border: solid 1px pink;
   padding: 10px;
 }
 .stockTwitterComponent{
