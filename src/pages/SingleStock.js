@@ -29,7 +29,7 @@ const SingleStock = (props) =>{
             for (let i=0; i<stock.length; i++){
                 return(
                     <div className = "wholeStockPage">
-                    <Header />
+                    {/* <Header /> */}
                     <div className = "stockInfo">
                     <h1>Symbol: {stock[i].symbol}</h1>
                     <h2>Date: {stock[i].label}</h2>
@@ -38,10 +38,14 @@ const SingleStock = (props) =>{
                     </div>
                     <Chart />
                     <div className = "stockFlexComponents">
+                        <div className = "stockCommentComponent">
                     <CommentBox />
+                    </div>
+                    <div className = "stockTwitterComponent">
                     <StockTweets />
                     </div>
-                    <Footer />
+                    </div>
+                    {/* <Footer /> */}
                     </div>
                 )
             }

@@ -7,9 +7,9 @@ import Footer from '../components/Footer/Footer'
 function HomeIn() {
     return (
         <div>
-            <Header/>
+            {/* <Header/> */}
             Home Page Once Logged In
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     )
 }

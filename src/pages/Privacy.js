@@ -5,7 +5,7 @@ import Footer from '../components/Footer/Footer'
 function Privacy() {
     return (
         <div>
-            <Header/>
+            {/* <Header/> */}
             <div className="privacypolicy">
             <h1>Privacy Policy</h1>
 <p>Last updated: June 18, 2021</p>
@@ -177,7 +177,7 @@ function Privacy() {
 <li>By visiting this page on our website: <a href="http://localhost:3000/about" rel="external nofollow noopener" target="_blank">http://localhost:3000/about</a></li>
 </ul>
 </div>
-<Footer/>
+{/* <Footer/> */}
         </div>
     )
 }

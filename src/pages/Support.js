@@ -6,9 +6,9 @@ import Footer from '../components/Footer/Footer'
 function Support() {
     return (
         <div>
-            <Header/>
+            {/* <Header/> */}
             Support Page
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     )
 }
