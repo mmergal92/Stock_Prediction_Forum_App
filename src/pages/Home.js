@@ -6,6 +6,8 @@ import React from 'react'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import Dashboard from '../components/Dashboard/Dashboard'
+import Search from '../components/Dashboard/Search'
+
 
 function Home() {
     console.log(localStorage.getItem('sessionEmail'))
@@ -15,6 +17,7 @@ function Home() {
     return (
         <div>
             <Header/>
+            <Search/>
             {/* <Dashboard/> */}
 
             <Footer/>
