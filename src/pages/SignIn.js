@@ -13,14 +13,17 @@ function SignIn(props) {
   };
 
   const logout = (response) => {
+    
     localStorage.removeItem("sessionEmail");
     localStorage.removeItem("ProfileImg");
+    localStorage.removeItem("userRealName");
+    localStorage.removeItem("userfRealName");
+    localStorage.clear();
     history.push("/");
   };
 
   const responseGoogleSuccess = (response) => {
-    
-    console.log(response);
+    console.log('this func is being reach')
     fetch(props.URL + "SignIn/", {
       method: "post",
       headers: {
@@ -40,6 +43,8 @@ function SignIn(props) {
 
     localStorage.setItem("sessionEmail", response.profileObj.email);
     localStorage.setItem("ProfileImg", response.profileObj.imageUrl);
+    localStorage.setItem("userRealName", response.profileObj.givenName);
+    localStorage.setItem("userfRealName", response.profileObj.name);
     console.log(response);
     console.log(response.profileObj);
 

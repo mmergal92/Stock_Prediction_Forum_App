@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  color: navy;
+  color: grey;
   min-height: 400px;
    margin-bottom: 100px;
    clear: both;
@@ -20,8 +20,22 @@
 a{
   text-decoration: none;
   
+  
+}
+.questionmark{
+  width: 36px;
+  height: 36px;
 }
 
+.likedislikebtn{
+
+}
+
+.gored{
+  
+    color: red;
+    
+}
 
 a:link {
   color: grey;

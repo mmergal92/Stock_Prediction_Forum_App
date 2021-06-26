@@ -15,13 +15,14 @@ import Support from './pages/Support';
 import UserProfile from './pages/UserProfile';
 import StockList from './pages/StockList';
 import Privacy from './pages/Privacy';
+import ProtectedRoute from './utils/ProtectedRoute';
+import CreateNickName from './pages/CreateNickName';
 
 // Components Import
 
 // Dashboard
 // import Chart from './components/Dashboard/Chart';
 // import CommentBox from './components/Dashboard/CommentBox';
-// import LikeDislike from './components/Dashboard/LikeDislike';
 // import StockTweets from './components/Dashboard/StockTweets';
 
 // // Footer
@@ -41,18 +42,18 @@ import Privacy from './pages/Privacy';
 
 
 function App() {
-  const URL = "https://stock-prediction-forum-backend.herokuapp.com/"
+  const URL = "http://localhost:3001/"
 
   return (
 
    <div className="App">
      <Switch>
       
-      <Route exact path="/stocks" > 
+      {/* <Route exact path="/stocks" > 
         
         <StockList url={URL}/>
 
-      </Route>
+      </Route> */}
 
       <Route 
       path="/stocks/:symbol"
@@ -61,11 +62,14 @@ function App() {
 
       </Route>
 
-      <Route path="/SignUp"> 
+      <ProtectedRoute path='/stocks' component={StockList } isAuth={localStorage.getItem("sessionEmail")}/>
+
+
+      {/* <Route path="/SignUp"> 
         
         <SignUp/>
 
-      </Route>
+      </Route> */}
       
       <Route path="/SignIn"> 
         
@@ -79,9 +83,11 @@ function App() {
 
       </Route>
       
+      
+
       <Route path="/Support"> 
         
-        <Support/>
+      <Support/>
 
       </Route>
 
@@ -91,12 +97,14 @@ function App() {
 
       </Route>
 
-      
+  
+
       <Route exact path="/"> 
         
         <Home/>
 
       </Route>
+
 
 
       <Route path="*"> 

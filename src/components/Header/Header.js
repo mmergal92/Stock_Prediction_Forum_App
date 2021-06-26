@@ -13,11 +13,14 @@ function Header() {
     <div className="navbar">
       <ul>
       <li id="HomeIcon"><HomeComponent/></li>
+      {localStorage.getItem('sessionEmail') !== null ? <li>Welcome Back     {localStorage.getItem('userRealName')} !</li> : ''}
       <li><StocksComponent/></li>
       {/* <li><DropDown/></li> */}
       {/* {localStorage.getItem('ProfileImg') !== null ? <li><img className="userprofilepic" src={localStorage.getItem('ProfileImg')} alt="" /></li> : ''} */}
+      
       {localStorage.getItem('sessionEmail') === null ? <li><SignInComponent/></li> : ''}
       {localStorage.getItem('sessionEmail') !== null ? <li><LogOut/></li> : ''}
+      
       {/* <li><SignUpComponent/></li> */}
       </ul>
     </div>
