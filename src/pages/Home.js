@@ -3,7 +3,7 @@ import React from 'react'
 
 // Components
 import Dashboard from '../components/Dashboard/Dashboard'
-// import StockImage from '../StockImage.jpg'
+import profitHippo from '../profithippo.png'
 
 function Home() {
 
@@ -15,6 +15,7 @@ function Home() {
     return (
         <div className = "home">
             <div className = "home-heading">
+                <img src={profitHippo} className="hippo"/>
             <h1>Welcome to ProfitHippo</h1>
             <h2>Your Investing Community</h2>
             </div>

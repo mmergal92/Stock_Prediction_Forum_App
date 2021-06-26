@@ -29,9 +29,9 @@ a{
   width: 36px;
   height: 36px;
 }
-.prediction{
+/* .prediction{
   padding-bottom: 5px;
-}
+} */
 /* .likedislikebtn{
 
 } 
@@ -73,7 +73,8 @@ text-align: right;
 }
 .stockInfo{
   background-color: #10101C;
-  padding-bottom: 100px;
+  padding-bottom: 10px;
+
 }
 /* .comments {
   border: solid 1px red
@@ -121,7 +122,8 @@ text-align: right;
   margin: auto;
   width: 50%;
   height: 25%;
-  padding: 10px;
+  /* padding-bottom: 10px; */
+  /* border: solid 1px yellowgreen; */
   background-color: #222235;
 }
 /* .stocktweets{
@@ -216,6 +218,10 @@ li{
   width: 45%;
   margin: auto;
   margin-bottom: 20px;
+}
+.hippo{
+  padding-top:15px;
+  width: 10%
 }
 .login-page {
   background-color: #F0F2FA;

@@ -43,9 +43,7 @@ const SingleStock = (props) =>{
                     </div>
                     </div>
                     <Chart />
-                    {/* <Like/> */}
                     <LikenDislike/>
-                    {/* <Dislike/> */}
                     <div className = "stockFlexComponents">
                         <div className = "stockCommentComponent">
                         <CommentBox />
