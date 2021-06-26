@@ -15,13 +15,13 @@ function Home() {
     return (
         <div className = "home">
             <div className = "home-heading">
-            <h1>Your Investing Community</h1>
+            <h1>Welcome to ProfitHippo</h1>
+            <h2>Your Investing Community</h2>
             </div>
             <div className = "home-content">
             {/* <img src = {StockImage} alt = "Image of Stock charts" /> */}
 
-            <p>Welcome to the Stock Forum App where you can view stocks, see relevant information about the company, and leave comments to help other users with their investments.</p>
-            <p>Please <strong>Login</strong> to access all the features of this site.</p>
+            {localStorage.getItem('sessionEmail') ? `Welcome back, ${localStorage.getItem('userfRealName')}` : <p>Please <strong>Login</strong> to access all the features of this site.</p>}
             </div>
             {/* <Dashboard/> */}
         </div>

@@ -7,7 +7,10 @@
   /* border: purple 2px solid */
   /* clear: both; */
 }
-
+.home{
+  min-height: 400px;
+  padding-bottom: 200px;
+}
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,7 +29,9 @@ a{
   width: 36px;
   height: 36px;
 }
- 
+.prediction{
+  padding-bottom: 5px;
+}
 /* .likedislikebtn{
 
 } 
@@ -68,26 +73,56 @@ text-align: right;
 }
 .stockInfo{
   background-color: #10101C;
-  padding-bottom: 10px;
+  padding-bottom: 100px;
 }
 /* .comments {
   border: solid 1px red
 } */
-/* .existing-comments {
-  border: solid 1px purple;
-  width: 70%;
-  height: 25%;
-} */
-/* .new-comments {
-  border: solid 1px black;
-  width: 70%;
-  height: 25%;
-} */
+.textcomment {
+  padding-bottom: 2px;
+}
+.existing-comments table {
+  border-radius: 15px;
+  padding: 10px;
+  align-items: top;
+}
+.existing-comments button{
+  color: #5887FF;
+  background-color: #5887FF10;
+  border: none;
+  border-radius: 15px;
+  padding: 8px;
+}
+.user{
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  text-align: center;
+}
+.existing-comments img{
+  border-radius: 20px;
+  width: 15%;
+  padding: 3px;
+}
+.comment_input {
+  color: #D6D7E3;
+  background-color: #3C3C52;
+  border-radius: 10px;
+}
+.new-comments button{
+  color: #5887FF;
+  background-color: #5887FF10;
+  border: none;
+  border-radius: 10px;
+  border-radius: 15px;
+  padding: 8px;
+}
 .chartdiv{
   margin: auto;
   width: 50%;
   height: 25%;
   padding: 10px;
+  background-color: #222235;
 }
 /* .stocktweets{
   border: solid 1px yellowgreen;
@@ -95,7 +130,7 @@ text-align: right;
 .stockFlexComponents{
   display: flex;
   justify-content: space-evenly;
-  padding: 5px;
+  /* padding: 5px; */
   /* column-gap: 5px; */
   /* border: solid 1px yellowgreen; */
 }
@@ -107,14 +142,33 @@ text-align: right;
   /* border: solid 1px pink; */
   padding: 10px;
 }
-.stockCommentComponent table{
-  border: solid 1px pink;
-  padding: 10px;
+.stockCommentComponent table {
+  background: #222235; 
+  border: 0; 
+  /* border-collapse: separate;  */
+  border-spacing: 0 5px;
+  padding: 15px;
+  vertical-align: top;
+  height: 50px;
 }
+td {
+  border-top: 1px solid #3C3C52; 
+  vertical-align: center;
+  height: 50px;
+  /* border-collapse: separate; 
+  border-spacing: 5px; */
+} 
+/* .stockCommentComponent table, th, td{
+  background-color: #222235;
+  padding: 10px;
+} */
+
+
 .stockTwitterComponent{
+  padding: 10px;
   display: inline-flex;
   justify-content: center;
-  align-items: center;
+  align-items: top;
   text-align: center;
   /* border: solid 1px lightblue; */
 }

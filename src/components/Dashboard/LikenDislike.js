@@ -76,7 +76,7 @@ function LikenDislike () {
           possitive = ((votelikes.length / length) * 100).toFixed(3);
           setPositive(possitive);
 
-          setNegative(100 - positive)
+          setNegative(100 - possitive)
 
           console.log(positive)
           setNumberofUsers(arrayofvotes.length)
@@ -219,7 +219,7 @@ function LikenDislike () {
     const loaded = () => {
       return (
         <div>
-            <a href="">There are currently {numberofUsers} users have casted their vote today. {positive}% In Favor & {negative}% Against. </a> <img onMouseEnter={onHover} onMouseLeave={onLeave} className="questionmark"src="https://i.ibb.co/ZLp9rgn/help.png" alt="" />
+            <a href="">There are currently {numberofUsers} users have casted their vote today. {positive}% In Favor & {negative}% Against. </a> <img onMouseEnter={onHover} onMouseLeave={onLeave} className="questionmark" src="https://cdn.icon-icons.com/icons2/2576/PNG/512/question_mark_icon_153914.png" alt="" />
             <br />
             {hover ?  userlist: ''}
             <br />
