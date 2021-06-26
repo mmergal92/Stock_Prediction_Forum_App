@@ -33,9 +33,6 @@ Project III used the following technologies and services in order to perform cor
 -   Stock API 
 -   Twitter feed library
 
-### General Logic of Project III
-
-Chart here.
 
 ###  Challenges
 
@@ -43,4 +40,4 @@ Getting the charts to display was a challenge because many of the chart librarie
 
 ###  Stretch Goals
 
-The news sentiment analysis and stock prediction scoring algorithm were both stretch goals which we accomplished. We had identified additional "super stretch" goals in our initial planning but later decided those featured were not where we wanted to focus.
+The news sentiment analysis and stock prediction scoring algorithm were both stretch goals. We had identified additional "super stretch" goals in our initial planning (such as badges for verified users and a search feature) but later decided those featured were not where we wanted to focus.
