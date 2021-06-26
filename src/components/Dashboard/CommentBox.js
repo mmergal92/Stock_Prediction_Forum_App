@@ -75,7 +75,7 @@ let sym = posSym
             })
         })
         console.log("Did this work?")
-        const tempArray = newList;
+        // const tempArray = newList;
         tempArray.push(response)
         setNewList(tempArray)
         setChange(!change);
@@ -85,22 +85,45 @@ let sym = posSym
     })
     const loaded = () =>{
         return (
-            <div>
-                <h3>Existing Comments:</h3>
-                <ul>
-                    {newList.map((value, index) => {
+            <div className = "comments">
+                <div className = "existing-comments">
+                <h3>Existing Comments:</h3> 
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Date</th>
+                        <th>Comment</th>
+                        <th>Username</th>
+                        <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {newList.map((value, index) => {
                         return(
+                                <tr key={index}>
+                                    <td>{value.symbol}</td>   
+                                    <td>{value.date}</td>  
+                                    <td>{value.comment}</td>  
+                                    <td>{value.username}</td>
+                                    <td><button onClick={() => handleDelete(value)}>DELETE</button></td>
+                                    </tr>
+                        )})}
+                    </tbody>
+                    </table>
+                            {/* <li key={index}> Symbol: {value.symbol}, Date:{value.date}, Comment: {value.comment}, Username: {value.username}
                             <>
                             <li key={index}> Symbol: {value.symbol}, Date:{value.date}, Comment: {value.comment}, Author: {value.username}
                             <br />
                             {/* <button onClick={() => handleUpdate(index)}>UPDATE</button> */}
-                            <button onClick={() => handleDelete(value)}>DELETE</button>
-                            </li>
-                            </>
-                        )
+                            {/* <button onClick={() => handleDelete(value)}>DELETE</button> */}
+                            {/* </li> */} 
+                        {/* )
                     })}
-                </ul>
+                </ul> */}
                 <br/>
+                </div>
+                <div className = "new-comments">
                 <h3>Add a new Comment:</h3>
                 <form>
                 {/* <label>
@@ -114,6 +137,7 @@ let sym = posSym
                 </label><br/>
                 <button onClick= {handleSubmit}>Submit</button>
                 </form>
+                </div>
             </div>
         )
     }

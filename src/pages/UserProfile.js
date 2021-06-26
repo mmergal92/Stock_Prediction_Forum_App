@@ -7,9 +7,9 @@ import Footer from '../components/Footer/Footer'
 function UserProfile() {
     return (
         <div>
-            <Header/>
+            {/* <Header/> */}
             User Profile Page
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     )
 }

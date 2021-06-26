@@ -15,6 +15,8 @@ import Support from './pages/Support';
 import UserProfile from './pages/UserProfile';
 import StockList from './pages/StockList';
 import Privacy from './pages/Privacy';
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import ProtectedRoute from './utils/ProtectedRoute';
 import CreateNickName from './pages/CreateNickName';
 
@@ -47,6 +49,7 @@ function App() {
   return (
 
    <div className="App">
+     <Header />
      <Switch>
       
       {/* <Route exact path="/stocks" > 
@@ -113,6 +116,7 @@ function App() {
 
       </Route>
       </Switch>
+      <Footer />
     </div>
 
     

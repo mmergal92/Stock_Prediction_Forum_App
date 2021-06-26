@@ -52,7 +52,7 @@ function SignIn(props) {
   };
 
   return (
-    <div>
+    <div className="login-page">
       {localStorage.getItem("sessionEmail") === null ? (
         <h2>Welcome Back!</h2>
       ) : (

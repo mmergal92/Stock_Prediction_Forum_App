@@ -21,7 +21,7 @@ const StockList = (props) => {
     ]
 return (
     <div className= "stockInfo">
-            <Header/>
+            {/* <Header/> */}
             {stockCos.map((symbolLetters) => {
             const {name, symbol} = symbolLetters;
             return (
@@ -30,7 +30,7 @@ return (
                 </Link>
             );
         })}
-            <Footer/>
+            {/* <Footer/> */}
     </div>
     )
 }

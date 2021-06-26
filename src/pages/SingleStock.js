@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import CommentBox from '../components/Dashboard/CommentBox'
 import Chart from '../components/Dashboard/Chart'
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
+import StockTweets from '../components/Dashboard/StockTweets'
 import Like from '../components/Dashboard/Like'
 import Dislike from '../components/Dashboard/Dislike'
 import LikenDislike from '../components/Dashboard/LikenDislike'
@@ -30,21 +29,28 @@ const SingleStock = (props) =>{
         const loaded = () =>{
             for (let i=0; i<stock.length; i++){
                 return(
-                    <div>
-                    <Header />
+                    <div className = "wholeStockPage">
+                    <div className = "stockInfo">
                     <h1>Symbol: {stock[i].symbol}</h1>
                     <h2>Date: {stock[i].date}</h2>
                     <h3>Percent change: {stock[i].changePercent}</h3>
+                    <h3>Current Price: ${stock[i].open}</h3>
+                    </div>
                     <Chart />
                     {/* <Like/> */}
                     <LikenDislike/>
                     {/* <Dislike/> */}
-                    <CommentBox />
-                    <Footer />
+                    <div className = "stockFlexComponents">
+                        <div className = "stockCommentComponent">
+                        <CommentBox />
+                        </div>
+                        <div className = "stockTwitterComponent">
+                        <StockTweets />
+                         </div>
+                    </div>
                     </div>
                 )
             }
-
 
         }
     
