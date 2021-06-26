@@ -71,6 +71,7 @@ let sym = posSym
                 symbol: sym,
                 date: new Date(Date.now()).toLocaleString(),
                 comment: comment,
+                profilepic: localStorage.getItem('ProfileImg'),
                 username: localStorage.getItem('userfRealName')
             })
         })
@@ -87,7 +88,7 @@ let sym = posSym
         return (
             <div className = "comments">
                 <div className = "existing-comments">
-                <h3>Existing Comments:</h3> 
+                <h3>Stock Community Forum</h3> 
                 <table>
                     <thead>
                     <tr>
@@ -105,8 +106,8 @@ let sym = posSym
                                     <td>{value.symbol}</td>   
                                     <td>{value.date}</td>  
                                     <td>{value.comment}</td>  
-                                    <td>{value.username}</td>
-                                    <td><button onClick={() => handleDelete(value)}>DELETE</button></td>
+                                    <td className = "user"><img src={value.profilepic} alt="" />{value.username}</td>
+                                    <td>{localStorage.getItem('userfRealName') === value.username ? <button onClick={() => handleDelete(value)}>DELETE</button> : ''}</td>
                                     </tr>
                         )})}
                     </tbody>
@@ -130,9 +131,10 @@ let sym = posSym
                 Username: <input type= "text" className = "username_input" value = {username} onChange = {usernameChange} placeholder = "username"/>
                 </label><br/> */}
                 <label>
-                
+                <p className="textcomment">
                 Commenting as <b>{localStorage.getItem('userfRealName')}</b>:
                 <br />
+                </p>
                 <textarea className = "comment_input" value = {comment} onChange = {commentChange} placeholder = "New Comment"/>
                 </label><br/>
                 <button onClick= {handleSubmit}>Submit</button>

@@ -5,6 +5,7 @@ import StockTweets from '../components/Dashboard/StockTweets'
 import Like from '../components/Dashboard/Like'
 import Dislike from '../components/Dashboard/Dislike'
 import LikenDislike from '../components/Dashboard/LikenDislike'
+import calculate from '../utils/Calculate'
 
 const SingleStock = (props) =>{
         //Currency symbol from URL param
@@ -32,9 +33,14 @@ const SingleStock = (props) =>{
                     <div className = "wholeStockPage">
                     <div className = "stockInfo">
                     <h1>Symbol: {stock[i].symbol}</h1>
-                    <h2>Date: {stock[i].date}</h2>
-                    <h3>Percent change: {stock[i].changePercent}</h3>
-                    <h3>Current Price: ${stock[i].open}</h3>
+                    <h3>Date:  {stock[i].date}<br/>
+                    Percent change:  {stock[i].changePercent}%<br/>
+                    Current Price:  ${stock[i].open}<br/>
+                    </h3>
+                    <div className = "prediction">
+                        <strong>Stock Prediction: </strong>{calculate(stock)}<br/>
+                        This prediction is based on the net change of the stock prices.
+                    </div>
                     </div>
                     <Chart />
                     {/* <Like/> */}
