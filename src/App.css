@@ -2,13 +2,13 @@
   text-align: center;
   background-color: #10101C;
   color: white;
-  min-height: 400px;
-  padding-bottom: 100px;
+  min-height:1440px;
+  /* margin-bottom: 100px #10101C; */
   /* border: purple 2px solid */
   /* clear: both; */
 }
 .home{
-  min-height: 400px;
+  /* min-height: 400px; */
   padding-bottom: 200px;
 }
 /* .App-logo {
@@ -26,8 +26,8 @@ a{
   
 }
 .questionmark{
-  width: 36px;
-  height: 36px;
+  width: 20px;
+  height: 20px;
 }
 /* .prediction{
   padding-bottom: 5px;
@@ -120,6 +120,8 @@ text-align: right;
 }
 .chartdiv{
   margin: auto;
+  min-width: 250px;
+  min-height: 200px;
   width: 50%;
   height: 25%;
   /* padding-bottom: 10px; */
@@ -221,6 +223,8 @@ li{
 }
 .hippo{
   padding-top:15px;
+  min-height: 150px;
+  min-width: 150px;
   width: 10%
 }
 .login-page {
