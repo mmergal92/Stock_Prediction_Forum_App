@@ -11,10 +11,13 @@ const SingleStock = (props) =>{
         //Currency symbol from URL param
         // console.log(props)
         console.log(props.match.params.symbol)
+        console.log('i got')
         const symbol = props.match.params.symbol;
-        const url = "https://stock-prediction-forum-backend.herokuapp.com/" + "api/stock/price/" + symbol;
+        const url = `https://stock-prediction-forum-backend.herokuapp.com/prediction/lastest/${symbol}`;
         //STATE
-        const [stock, setStock] = useState('null');
+        console.log(url)
+        
+        const [stock, setStock] = useState();
         //fetch stock data
         const getStock = async() =>{
             const response = await fetch(url);
@@ -22,25 +25,32 @@ const SingleStock = (props) =>{
             // console.log(data)
             setStock(data);
         }
+        
         //useEffect
         React.useEffect(() => {
             getStock();
         }, [])
     
         const loaded = () =>{
-            for (let i=0; i<stock.length; i++){
+        //     for (let i=0; i<stock.length; i++){
                 return(
+                    
                     <div className = "wholeStockPage">
                     <div className = "stockInfo">
-                    <h1>Symbol: {stock[i].symbol}</h1>
-                    <h3>Date:  {stock[i].date}<br/>
-                    Percent change:  {stock[i].changePercent}%<br/>
-                    Current Price:  ${stock[i].open}<br/>
+                        
+                    <h1>Symbol: {stock.stock}</h1>
+                    <h3>Date:  {stock.date}<br/>
+                    Last Time Updated:  {stock.hour} {stock.timezone}<br/>
+                    
+                    Percent of Going Up/Down (Based on Lastest News): Up {stock.ratios.upPercent}% | Down {stock.ratios.downPercent}%<br/>
+                    Overall Prediction for Tomorrow: {stock.overallScore.type} <br />
+                    Current Price:  ${stock.price}<br/>
                     </h3>
-                    <div className = "prediction">
+                    {/* <div className = "prediction">
                         <strong>Stock Prediction: </strong>{calculate(stock)}<br/>
                         This prediction is based on the net change of the stock prices.
-                    </div>
+                    </div> */}
+                    
                     </div>
                     <Chart />
                     <LikenDislike/>
@@ -56,7 +66,7 @@ const SingleStock = (props) =>{
                 )
             }
 
-        }
+        // }
     
         const loading =()=>{
             return <h1>Loading ...</h1>
