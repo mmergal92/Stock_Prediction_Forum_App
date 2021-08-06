@@ -39,10 +39,13 @@ const SingleStock = (props) =>{
                     <div className = "stockInfo">
                         
                     <h1>Symbol: {stock.stock}</h1>
+                    <br />
                     <h3>Date:  {stock.date}<br/>
+                    <br />
                     Last Time Updated:  {stock.hour} {stock.timezone}<br/>
+                    <br />
                     
-                    Percent of Going Up/Down (Based on Lastest News): Up {stock.ratios.upPercent}% | Down {stock.ratios.downPercent}%<br/>
+                    Percent of Going Up/Down (Based on Lastest News): Up {stock.ratios.upPercent.toFixed(2)}% | Down {stock.ratios.downPercent.toFixed(2)}%<br/><br />
                     Overall Prediction for Tomorrow: {stock.overallScore.type} <br />
                     Current Price:  ${stock.price}<br/>
                     </h3>
